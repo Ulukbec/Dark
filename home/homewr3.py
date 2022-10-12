@@ -24,11 +24,11 @@ class Mull(Calculator):
 
 class Truediv(Calculator):
     def __truediv__(self):
-        return round(self.number1 / self.number2)
+        return round(self.number1 / self.number2, 4)
 
 
 cal = Sub()
-print(abs(cal.__sub__()))
+print(cal.__sub__())
 
 add = Add()
 print(add.__add__())
