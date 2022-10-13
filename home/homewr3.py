@@ -1,40 +1,50 @@
-class Calculator:
-    num1 = int(input("Вводите цифру :"))
-    num2 = int(input("Вводите цифру :"))
-
-    def __init__(self, number_1=num1, number_2=num2):
-        self.number1 = number_1
-        self.number2 = number_2
+class Add:
+    def __init__(self, number1):
+        self.number1 = number1
 
 
-class Add(Calculator):
-    def __add__(self):
-        return self.number1 + self.number2
+    def __add__(self, other):
+        return self.number1 + other.number1
 
 
-class Sub(Calculator):
-    def __sub__(self):
-        return self.number1 - self.number2
+class Sub:
+    def __init__(self, number1):
+        self.number1 = number1
 
 
-class Mull(Calculator):
-    def __mul__(self):
-        return self.number1 * self.number2
+    def __sub__(self, other):
+        return self.number1 - other.number1
 
 
-class Truediv(Calculator):
-    def __truediv__(self):
-        return round(self.number1 / self.number2, 4)
+class Mull:
+    def __init__(self, number1):
+        self.number1 = number1
 
 
-cal = Sub()
-print(cal.__sub__())
+    def __mul__(self, other):
+        return self.number1 * other.number1
 
-add = Add()
-print(add.__add__())
 
-mul = Mull()
-print(mul.__mul__())
+class Truediv:
+    def __init__(self, number1):
+        self.number1 = number1
 
-tru = Truediv()
-print(tru.__truediv__())
+    def __truediv__(self, other):
+        return round(self.number1 / other.number1, 4)
+
+
+class Calculator(Add, Sub, Mull, Truediv):
+    def __init__(self, number1):
+        super().__init__(number1)
+
+
+# Add.__init__(self, number1, number2)
+# Sub.__init__(self, number1, number2)
+# Mull.__init__(self, number1, number2)
+# Truediv.__init__(self, number1, number2)
+
+
+first = Calculator(34767)
+second = Calculator(34)
+
+print(first / second)
