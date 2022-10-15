@@ -2,7 +2,6 @@ class Add:
     def __init__(self, number1):
         self.number1 = number1
 
-
     def __add__(self, other):
         return self.number1 + other.number1
 
@@ -11,7 +10,6 @@ class Sub:
     def __init__(self, number1):
         self.number1 = number1
 
-
     def __sub__(self, other):
         return self.number1 - other.number1
 
@@ -19,7 +17,6 @@ class Sub:
 class Mull:
     def __init__(self, number1):
         self.number1 = number1
-
 
     def __mul__(self, other):
         return self.number1 * other.number1
