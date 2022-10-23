@@ -14,6 +14,6 @@ class Human:
         #     print("Экземпляр уже есть")
 
 
-hum = Human("Name")
+hum = Human("Name", 24, 145)
 print(hum.age)
 
